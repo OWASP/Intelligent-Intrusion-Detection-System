@@ -1,5 +1,4 @@
 #neural net classifier
-#neural net classifier
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -192,5 +191,5 @@ def neural_train():
             eval_acc += num_correct.item()
         print('Test Loss: {:.6f}, Acc: {:.6f}'.format(eval_loss / (len(
             dataset.test_dataset)), eval_acc / (len(dataset.test_dataset))))
+            torch.save(model, filepath)
         print()
-
