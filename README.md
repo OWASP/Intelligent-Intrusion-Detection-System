@@ -12,7 +12,7 @@ OWASP IIDS is an open source software that leverages the benefits of Artificial 
 
 
 ## Installation
-> Note: We recommend installing Manticore in a [virtual environment](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#installing-virtualenv)
+> Note: We recommend installing IIDS in a [virtual environment](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/#installing-virtualenv)
  to prevent conflicts with other projects or packages
 
 The user must install all packages using PyPI using pip install
