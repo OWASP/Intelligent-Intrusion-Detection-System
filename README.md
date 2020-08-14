@@ -6,8 +6,8 @@ OWASP IIDS is an open source software that leverages the benefits of Artificial 
 
 
 ## Features
--Django Based:- It is a fully Djnago based application
--Supports Multiple ML and NN models:- As the accuracy of different datasets depends on different models, so we have provided multiple models for training
+- Django Based:- It is a fully Djnago based application
+- Supports Multiple ML and NN models:- As the accuracy of different datasets depends on different models, so we have provided multiple models for training
 
 
 
