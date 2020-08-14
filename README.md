@@ -19,8 +19,8 @@ The user must install all packages using PyPI using pip install
 As we don't have a requirements.txt as of now, The user must manually install all packages.
 The List of packages are:-
 - Django,restframework
--sklearn,numpy,pandas
--Keras,PyTorch,Cuda(if Nvidia GPU support is available)
+- sklearn,numpy,pandas
+- Keras,PyTorch,Cuda(if Nvidia GPU support is available)
 
 ## Usage
 First the user needs to configure the json file named config.json by mentioning the model and all the hypermaters, which are to be used.
