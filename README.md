@@ -2,12 +2,13 @@
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/OWASP/wstg/issues)
 
 
-OWASP IIDS is an open source software that leverages the benefits of Artificial Intelligence to detect the intrusion and alert the respective network administrator
+OWASP IIDS is an open source software that leverages the benefits of Artificial Intelligence to detect the intrusion and alert the respective network administrator.
 
-##Features
+
+## Features
 -Django Based:- It is a fully Djnago based application
 -Supports Multiple ML and NN models:- As the accuracy of different datasets depends on different models, so we have provided multiple models for training
--
+
 
 
 ## Installation
