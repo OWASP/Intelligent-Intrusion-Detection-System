@@ -6,7 +6,7 @@ from torch.autograd import Variable
 
 
 class CNN(nn.Module):
-    def __init__(self, in_dim, n_class):
+    def __init__(self, in_dim =1, n_class =23):
         super(CNN, self).__init__()
 
         self.conv = nn.Sequential(
@@ -34,7 +34,7 @@ class CNN(nn.Module):
     
 class RNN(nn.Module):
 
-    def __init__(self, input_dim, hidden_dim, layer_dim, output_dim):
+    def __init__(self, input_dim =1, hidden_dim= 3, layer_dim =3, output_dim=1):
         super(RNN, self).__init__()
         self.hidden_dim = hidden_dim
         self.layer_dim = layer_dim

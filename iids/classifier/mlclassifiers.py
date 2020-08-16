@@ -7,10 +7,11 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process import GaussianProcessClassifier
+import joblib
+from main.management.commands import *
 #import all necessay packages and all modules 
 #
 # remove false from save model
-
 
 class DecisionTree():
 
@@ -176,3 +177,4 @@ class MLP():
             raise IOError("Error saving model data to disk: {}".format(str(e)))
             return False
         return True 
+

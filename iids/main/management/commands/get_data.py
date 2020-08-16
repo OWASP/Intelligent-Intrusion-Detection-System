@@ -9,7 +9,6 @@ from rest_framework.decorators import api_view
 from rest_framework.views import APIView
 from rest_framework.response import Response
 import pandas as pd
-from main.commands.get_data import *
 from preprocessor.preprocessors import *
 from classifier.mlclassifiers import *
 from classifier.nnclassifiers import *
@@ -37,7 +36,7 @@ class Command(BaseCommand):
         
         data = pd.read_csv(dataset_path)
         Preprocessor(data)
-        if input_data:
+        if 'input' in input_data:
             predict(input_data)
         shutil.make_archive(model_config, 'zip',config_path)
         return dataset_path, config_path,  model_type  
@@ -47,7 +46,7 @@ class Command(BaseCommand):
 
 
 def config(dir):  
-    global response
+    global response,model
     with open(dir,"r") as f:
         data = json.load(f)
     if data['model_type'] == 'nn':
@@ -81,7 +80,8 @@ def config(dir):
     model.train()
     model.save_model(model, config_path)
     zip_file = zipfile.ZipFile("/local/my_files/my_file.zip", "w")
-    return model            
+
+    return model, zip_file
 
 
 

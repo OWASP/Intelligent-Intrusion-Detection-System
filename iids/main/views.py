@@ -6,7 +6,6 @@ from rest_framework.decorators import api_view
 from rest_framework.views import APIView
 from rest_framework.response import Response
 import pandas as pd
-from main.commands.get_data import *
 from preprocessor.preprocessors import *
 from classifier.mlclassifiers import *
 from classifier.nnclassifiers import *

@@ -1,7 +1,7 @@
-#Import all the modules
 from sklearn.preprocessing import LabelEncoder
-#from main.commands.get_data import *
-# pylint: disable=E1101
+import torch
+from sklearn.model_selection import train_test_split
+
 
 class Preprocessor:
     
@@ -74,4 +74,4 @@ class Preprocessor:
             return _data
         return self._encoder['label'].transform([data])[0]
 
-     
+
