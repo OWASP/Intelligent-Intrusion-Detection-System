@@ -1,8 +1,15 @@
 #import all the modules below
 from sklearn import tree
 import json
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.ensemble import AdaBoostClassifier
+from sklearn.gaussian_process import GaussianProcessRegressor
+from sklearn.gaussian_process import GaussianProcessClassifier
 #import all necessay packages and all modules 
-#remove false from save model
+#
+# remove false from save model
 
 
 class DecisionTree():

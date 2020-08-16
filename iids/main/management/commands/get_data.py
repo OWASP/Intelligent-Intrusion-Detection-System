@@ -13,7 +13,36 @@ from main.commands.get_data import *
 from preprocessor.preprocessors import *
 from classifier.mlclassifiers import *
 from classifier.nnclassifiers import *
+import shutil
+import os
 #import all from others
+
+class Command(BaseCommand):
+    
+    help = 'provide the path of dataset and config.json '
+
+    def add_arguments(self, parser):
+        parser.add_argument('-d', '--dataset', type=dir , help='Provide the dataset for training')
+        parser.add_argument('-c', '--config', type=dir, help='Provide the config file of Model')
+        parser.add_argument('-m', '--model_type ', type=str, help='Mention the type of model "ml" if machine learning is to be used and "nn" if neural networks are to be used' )
+        parser.add_argument('-i', '--input', type=list, help='Provide the input data for prediction', )
+        
+
+    def handle(self, *args, **kwargs):
+        global dataset_path, config_path,  model_type
+        dataset_path = kwargs['dataset']
+        config_path = kwargs['config']
+        model_type = kwargs['model_type']
+        input_data = kwargs['input']       
+        
+        data = pd.read_csv(dataset_path)
+        Preprocessor(data)
+        if input_data:
+            predict(input_data)
+        shutil.make_archive(model_config, 'zip',config_path)
+        return dataset_path, config_path,  model_type  
+
+
 
 
 
@@ -51,7 +80,7 @@ def config(dir):
 
     model.train()
     model.save_model(model, config_path)
-
+    zip_file = zipfile.ZipFile("/local/my_files/my_file.zip", "w")
     return model            
 
 
@@ -62,10 +91,10 @@ def config(dir):
 
 
 #@api_view(['GET'])
-def predict(get_response ):
+def predict(data ):
     global model
     config(config_path)    
-    input_data = [] #Should be provided with cUrl get Request or by using Postman
+    
     if data['model_type'] == 'nn': 
         model = torch.load(config_path)
         _data = dataset.encode(input_data)
@@ -84,21 +113,3 @@ def predict(get_response ):
     return JsonResponse(output)
 
 
-class Command(BaseCommand):
-    
-    help = 'provide the path of dataset and config.json '
-
-    def add_arguments(self, parser):
-        parser.add_argument('-d', '--dataset', type=dir , help='Provide the dataset for training')
-        parser.add_argument('-c', '--config', type=dir, help='Provide the config file of Model')
-        parser.add_argument('-m', '--model_type ', type=str, help='Mention the type of model "ml" if machine learning is to be used and "nn" if neural networks are to be used' )
-
-    def handle(self, *args, **kwargs):
-        global dataset_path, config_path,  model_type
-        dataset_path = kwargs['dataset']
-        config_path = kwargs['config']
-        model_type = kwargs['model_type']
-       
-        a=config(config_path)
-        return dataset_path, config_path,  model_type  
-   
