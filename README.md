@@ -18,13 +18,13 @@ OWASP IIDS is an open source software that leverages the benefits of Artificial 
 The user must install all packages using PyPI using pip install
 As we don't have a requirements.txt as of now, The user must manually install all packages.
 The List of packages are:-
-- Django  ```bash pip install django``` 
-- restframework
-- sklearn
-- numpy
-- pandas
-- Keras
-- PyTorch
+- Django  ```pip install django``` 
+- restframework ```pip install djangorestframework```
+- sklearn ```pip install sklearn```
+- numpy ```pip install numpy```
+- pandas ```pip install pandas```
+- Keras ```pip install keras```
+- PyTorch ```pip install torch```
 - Cuda(if Nvidia GPU support is available)
 
 ## Usage
